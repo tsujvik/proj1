@@ -40,23 +40,41 @@ function draw() {
     if (direction === "RIGHT") head.x += box;
     if (direction === "DOWN") head.y += box;
 
+    // collision (wall)
+    if (head.x < 0 || head.y < 0 || head.x >= canvas.width || head.y >= canvas.height) {
+        alert("game over!");
+        resetGame();
+        return;
+    }
+
+    // COLLISION (head)
+    if (snake.some(part => part.x === head.x && part.y === head.y)) {
+        alert("game over!");
+        resetGame();
+        return;
+    }
+
+    // new head
+    snake.unshift(head);
+
     if (head.x === food.x && head.y === food.y) {
         food = {
             x: Math.floor(Math.random() * (canvas.width / box)) * box,
             y: Math.floor(Math.random() * (canvas.height / box)) * box
         };
     } else {
-        snake.pop();
+        snake.pop(); 
     }
-
-    if (head.x < 0 || head.y < 0 || head.x >= canvas.width || head.y >= canvas.height || 
-        snake.some(part => part.x === head.x && part.y === head.y)) {
-        alert("game over!");
-        snake = [{ x: 200, y: 200 }];
-        direction = "RIGHT";
-    }
-
-    snake.unshift(head);
 }
+
+function resetGame() {
+    snake = [{ x: 200, y: 200 }];
+    direction = "RIGHT";
+    food = {
+        x: Math.floor(Math.random() * (canvas.width / box)) * box,
+        y: Math.floor(Math.random() * (canvas.height / box)) * box
+    };
+}
+
 
 setInterval(draw, 100);
