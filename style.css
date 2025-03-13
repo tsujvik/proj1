@@ -8,6 +8,12 @@ h1 {
     color: #ff4500;
 }
 
+p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
 canvas {
     border: 2px solid #ff4500;
     background-color: #f5f5dc;
