@@ -42,14 +42,14 @@ function draw() {
 
     // collision (wall)
     if (head.x < 0 || head.y < 0 || head.x >= canvas.width || head.y >= canvas.height) {
-        alert("game over!");
+        alert("game over! refresh the page to retry :)");
         resetGame();
         return;
     }
 
     // COLLISION (head)
     if (snake.some(part => part.x === head.x && part.y === head.y)) {
-        alert("game over!");
+        alert("game over! refresh the page to retry :)");
         resetGame();
         return;
     }
