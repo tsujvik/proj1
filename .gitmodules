@@ -1,3 +1,3 @@
 [submodule "path_to_submodule"] 
   path = path_to_submodule 
-  url = git:https://github.com/tsujvik/proj1.git/  
+  url = https://github.com/tsujvik/proj1.git
