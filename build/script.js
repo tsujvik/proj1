@@ -42,15 +42,34 @@ function draw() {
     if (direction === "RIGHT") head.x += box;
     if (direction === "DOWN") head.y += box;
 
+<<<<<<< HEAD:build/script.js
     // collisions
     if (head.x < 0 || head.y < 0 || head.x > canvas.width || head.y > canvas.height || 
         snake.some(part => part.x === head.x && part.y === head.y)) {
         alert("Game Over! Final Score: " + score);
+=======
+    // collision (wall)
+    if (head.x < 0 || head.y < 0 || head.x >= canvas.width || head.y >= canvas.height) {
+        alert("game over!");
+>>>>>>> parent of 10a02f4 (score):script.js
         resetGame();
         return;
     }
 
+<<<<<<< HEAD:build/script.js
     // scoring
+=======
+    // COLLISION (head)
+    if (snake.some(part => part.x === head.x && part.y === head.y)) {
+        alert("game over!");
+        resetGame();
+        return;
+    }
+
+    // new head
+    snake.unshift(head);
+
+>>>>>>> parent of 10a02f4 (score):script.js
     if (head.x === food.x && head.y === food.y) {
         score++; 
         scoreDisplay.textContent = score; 
