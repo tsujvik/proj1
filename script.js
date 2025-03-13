@@ -54,6 +54,7 @@ function draw() {
     if (head.x === food.x && head.y === food.y) {
         score++; 
         scoreDisplay.textContent = score; 
+        document.getElementById("score").textContent = score;
         food = {
             x: Math.floor(Math.random() * (canvas.width / box)) * box,
             y: Math.floor(Math.random() * (canvas.height / box)) * box
