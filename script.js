@@ -43,7 +43,7 @@ function draw() {
     if (direction === "DOWN") head.y += box;
 
     // collisions
-    if (head.x < 0 || head.y < 0 || head.x >= canvas.width || head.y >= canvas.height || 
+    if (head.x < 0 || head.y < 0 || head.x > canvas.width || head.y > canvas.height || 
         snake.some(part => part.x === head.x && part.y === head.y)) {
         alert("Game Over! Final Score: " + score);
         resetGame();

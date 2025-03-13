@@ -1,0 +1,19 @@
+{
+  "name": "proj1",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsujvik/proj1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsujvik/proj1/issues"
+  },
+  "homepage": "https://github.com/tsujvik/proj1#readme",
+  "description": ""
+}
